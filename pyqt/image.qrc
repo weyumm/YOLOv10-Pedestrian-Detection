@@ -1,0 +1,19 @@
+<RCC>
+  <qresource prefix="image">
+    <file>icons/recognition.png</file>
+    <file>icons/detect_video.png</file>
+    <file>icons/used_time.png</file>
+    <file>icons/object_nums.png</file>
+    <file>icons/position.png</file>
+    <file>icons/All_nums.png</file>
+    <file>icons/image_result.png</file>
+    <file>icons/suspend_video.png</file>
+    <file>icons/export.png</file>
+    <file>icons/stop_image.png</file>
+    <file>icons/stop_video.png</file>
+    <file>icons/image.png</file>
+    <file>icons/video.png</file>
+    <file>icons/weight.png</file>
+    <file>icons/init.png</file>
+  </qresource>
+</RCC>

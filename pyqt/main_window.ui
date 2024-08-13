@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1076</width>
+    <height>805</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="input">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>640</width>
+      <height>480</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>原始图像展示</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="buttton_image_select">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>220</y>
+      <width>70</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>选择图像</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="buttton_video_select">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>380</y>
+      <width>70</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>选择视频</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_weight_select">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>90</y>
+      <width>130</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"># rgb(0, 170, 255)</string>
+    </property>
+    <property name="text">
+     <string>模型权重选择</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_weight_init">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>90</y>
+      <width>130</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>模型权重初始化</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_image_detect">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>220</y>
+      <width>70</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>图像检测</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_image_show">
+    <property name="geometry">
+     <rect>
+      <x>1000</x>
+      <y>220</y>
+      <width>70</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>结果展示</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_video_detect">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>380</y>
+      <width>70</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>视频检测</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_video_suspend">
+    <property name="geometry">
+     <rect>
+      <x>1000</x>
+      <y>380</y>
+      <width>70</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>暂停检测</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_video_stop">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>450</y>
+      <width>100</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>结束视频检测</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_image_stop">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>290</y>
+      <width>100</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>结束图像检测</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_image_export">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>290</y>
+      <width>140</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>图像检测结果导出</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_video_export">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>450</y>
+      <width>140</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>视频检测结果导出</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_weight_select">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>92</y>
+      <width>34</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>权重图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_weight_init">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>92</y>
+      <width>34</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>初始图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_image_select">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>225</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>选图-图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_video_select">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>385</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>选视-图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_image_detect">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>225</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>图检-图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_video_detect">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>385</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>视检-图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_image_show">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>225</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>图展-图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_image_stop">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>295</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>图结-图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_image_export">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>295</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>图导-图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_video_suspend">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>385</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>暂停-图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_video_stop">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>450</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>视结-图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_video_export">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>450</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>视导-图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="confidence">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>95</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#confidence{
+	font-size:12pt;
+}</string>
+    </property>
+    <property name="text">
+     <string>Confidence:</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="con_slider">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>95</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider{
+	border-color: #bcbcbc;
+	color:#57a4ff;
+}
+QSlider::groove:horizontal {
+     border: 1px solid #999999;
+     height: 3px;
+  	 margin: 0px 0;
+     left: 5px;
+	right: 5px;
+ }
+QSlider::handle:horizontal {
+     border: 0px ;
+     border-image: url(:/img/img/icons/full-moon.png);
+	 width:17px;
+     margin: -7px -7px -7px -7px;
+}
+QSlider::add-page:horizontal{
+background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #f9f9f9, stop:0.25 #f9f9f9, stop:0.5 #f9f9f9, stop:1 #f9f9f9);
+
+}
+QSlider::sub-page:horizontal{
+ background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #57a4ff, stop:0.25 #57a4ff, stop:0.5 #57a4ff, stop:1 #57a4ff);
+}</string>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>25</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="con_number">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>95</y>
+      <width>60</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="keyboardTracking">
+     <bool>false</bool>
+    </property>
+    <property name="maximum">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.010000000000000</double>
+    </property>
+    <property name="stepType">
+     <enum>QAbstractSpinBox::DefaultStepType</enum>
+    </property>
+    <property name="value">
+     <double>0.250000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="confidence_2">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>95</y>
+      <width>60</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#confidence{
+	font-size:12pt;
+}</string>
+    </property>
+    <property name="text">
+     <string>IOU：</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="iou_number">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>95</y>
+      <width>60</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="maximum">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.010000000000000</double>
+    </property>
+    <property name="stepType">
+     <enum>QAbstractSpinBox::DefaultStepType</enum>
+    </property>
+    <property name="value">
+     <double>0.400000000000000</double>
+    </property>
+   </widget>
+   <widget class="QSlider" name="iou_slider">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>95</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider{
+	border-color: #bcbcbc;
+	color:#57a4ff;
+}
+QSlider::groove:horizontal {
+     border: 1px solid #999999;
+     height: 3px;
+  	 margin: 0px 0;
+     left: 5px;
+	right: 5px;
+ }
+QSlider::handle:horizontal {
+     border: 0px ;
+     border-image: url(:/img/img/icons/full-moon.png);
+	 width:17px;
+     margin: -7px -7px -7px -7px;
+}
+QSlider::add-page:horizontal{
+background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #f9f9f9, stop:0.25 #f9f9f9, stop:0.5 #f9f9f9, stop:1 #f9f9f9);
+
+}
+QSlider::sub-page:horizontal{
+ background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #57a4ff, stop:0.25 #57a4ff, stop:0.5 #57a4ff, stop:1 #57a4ff);
+}</string>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>40</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>5</y>
+      <width>951</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>20</pointsize>
+      <italic>true</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>基于YOLOV8模型和Caltech数据集的行人检测系统 v1.0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_detect_time">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>150</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>用时图</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_detect_time">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>150</y>
+      <width>50</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_detect_object_nums">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>150</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>目标-图</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_detect_object_nums">
+    <property name="geometry">
+     <rect>
+      <x>1000</x>
+      <y>150</y>
+      <width>50</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>145</y>
+      <width>80</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>检测用时：</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>145</y>
+      <width>70</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>目标数量：</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_detect_object_pos">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>635</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>位置图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>630</y>
+      <width>80</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>目标位置：</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_detect_object_all">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>635</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>目标框</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>630</y>
+      <width>120</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>690</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>xmin：</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>740</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>xmax：</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_xmin">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>690</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_xmax">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>740</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_ymax">
+    <property name="geometry">
+     <rect>
+      <x>985</x>
+      <y>740</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>740</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>ymax：</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_ymin">
+    <property name="geometry">
+     <rect>
+      <x>985</x>
+      <y>690</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>690</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>ymin：</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>50</y>
+      <width>611</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>16</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="text">
+     <string>CSDN： BestSongC    B站：Bestsongc    微信公众号：BestSongC</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_camera_select">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>545</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>摄像-图</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_camera_detect">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>545</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>摄检-图</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_camera_start">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>540</y>
+      <width>90</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>打开摄像头</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_camera_detect">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>540</y>
+      <width>90</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>摄像头检测</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_camera_stop">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>545</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>摄结-图</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_camera_stop">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>540</y>
+      <width>90</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>结束摄像头</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_main">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1071</width>
+      <height>821</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_4">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>510</y>
+      <width>420</width>
+      <height>2</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>130</y>
+      <width>2</width>
+      <height>660</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>UpArrowCursor</cursorShape>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_5">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>200</y>
+      <width>420</width>
+      <height>2</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_6">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>350</y>
+      <width>420</width>
+      <height>2</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_7">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>600</y>
+      <width>420</width>
+      <height>2</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>740</y>
+      <width>650</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>输出状态监测框</string>
+    </property>
+   </widget>
+   <zorder>label_main</zorder>
+   <zorder>input</zorder>
+   <zorder>buttton_image_select</zorder>
+   <zorder>buttton_video_select</zorder>
+   <zorder>button_weight_select</zorder>
+   <zorder>button_weight_init</zorder>
+   <zorder>button_image_detect</zorder>
+   <zorder>button_image_show</zorder>
+   <zorder>button_video_detect</zorder>
+   <zorder>button_video_suspend</zorder>
+   <zorder>button_video_stop</zorder>
+   <zorder>button_image_stop</zorder>
+   <zorder>button_image_export</zorder>
+   <zorder>button_video_export</zorder>
+   <zorder>label_weight_select</zorder>
+   <zorder>label_weight_init</zorder>
+   <zorder>label_image_select</zorder>
+   <zorder>label_video_select</zorder>
+   <zorder>label_image_detect</zorder>
+   <zorder>label_video_detect</zorder>
+   <zorder>label_image_show</zorder>
+   <zorder>label_image_stop</zorder>
+   <zorder>label_image_export</zorder>
+   <zorder>label_video_suspend</zorder>
+   <zorder>label_video_stop</zorder>
+   <zorder>label_video_export</zorder>
+   <zorder>confidence</zorder>
+   <zorder>con_slider</zorder>
+   <zorder>con_number</zorder>
+   <zorder>confidence_2</zorder>
+   <zorder>iou_number</zorder>
+   <zorder>iou_slider</zorder>
+   <zorder>label</zorder>
+   <zorder>label_detect_time</zorder>
+   <zorder>lineEdit_detect_time</zorder>
+   <zorder>label_detect_object_nums</zorder>
+   <zorder>lineEdit_detect_object_nums</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_detect_object_pos</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_detect_object_all</zorder>
+   <zorder>comboBox</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_6</zorder>
+   <zorder>lineEdit_xmin</zorder>
+   <zorder>lineEdit_xmax</zorder>
+   <zorder>lineEdit_ymax</zorder>
+   <zorder>label_7</zorder>
+   <zorder>lineEdit_ymin</zorder>
+   <zorder>label_8</zorder>
+   <zorder>label_9</zorder>
+   <zorder>label_camera_select</zorder>
+   <zorder>label_camera_detect</zorder>
+   <zorder>button_camera_start</zorder>
+   <zorder>button_camera_detect</zorder>
+   <zorder>label_camera_stop</zorder>
+   <zorder>button_camera_stop</zorder>
+   <zorder>lineEdit_4</zorder>
+   <zorder>line</zorder>
+   <zorder>lineEdit_5</zorder>
+   <zorder>lineEdit_6</zorder>
+   <zorder>lineEdit_7</zorder>
+   <zorder>lineEdit</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="camera.qrc"/>
+ </resources>
+ <connections/>
+</ui>
