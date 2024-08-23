@@ -12,7 +12,7 @@
 
 ## Step2：部署阶段（Windows）
 - 首先，你可以在D盘新建一个文件夹（**新手请确保你的环境变量能让Python读取与运行D盘的文件**），然后将这个文件夹命名为yolo10PD（这一步的名字可以自行发挥）。
-  ![docs_and_imgs/1-Create new folder.png](docs_and_imgs/1-Create new folder.png)
+  ![Create new folder](docs_and_imgs/1-Create new folder.png)
 - 然后，如果你是Win11的系统，可以通过在进入该文件夹后，右键文件夹中空白的地方，然后启动PowerShell。
 
 - 当然，如果你是Win11及以下的系统，也可以选择进入该文件夹后，点击上方显示路径的框格，然后输入cmd，打开命令行。Powershell与cmd的命令略有不同，如果你遇到了一些报错，询问AI是一个很好的选择。
