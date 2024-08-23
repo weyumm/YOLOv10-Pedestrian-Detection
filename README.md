@@ -11,6 +11,7 @@
 - 软件：本地部署YOLOv10前，你需要先安装好Python（版本大于等于3.10）和Git，这两个是必备的，如果你有基础，可以考虑使用Anaconda或者Miniconda，甚至Docker等。
 
 ## Step2：部署阶段（Windows）
+### Step2.1：打开Powershell或cmd
 - 首先，你可以在D盘新建一个文件夹（**新手请确保你的环境变量能让Python读取与运行D盘的文件**），然后将这个文件夹命名为yolo10PD（这一步的名字可以自行发挥）。
   ![Create new folder](docs_and_imgs/1-Create new folder.png)
 - 然后，如果你是Win11的系统，可以通过在进入该文件夹后，右键文件夹中空白的地方，然后启动PowerShell。
@@ -21,3 +22,15 @@
   ![Open cmd](docs_and_imgs/4-Open cmd.png)
   并且，cmd看起来是这样：
   ![cmd looks like this](docs_and_imgs/5-cmd looks like this.png)
+  
+### Step2.2：创建并激活虚拟环境
+- 在这里，你只要逐行复制粘贴代码到终端里运行，然后出现类似如图所示的变化，意味着你的操作成功了
+- 对于Windows系统，当你使用Powershell时，请先粘贴第一段代码
+  ```
+    python -m venv yolovenv
+  ```
+  然后，激活它，输入以下代码
+  ```
+    yolovenv/Scripts/activate
+  ```
+  你将在Powershell中看到如图所示的绿色虚拟环境被高亮显示，意味着操作成功。
