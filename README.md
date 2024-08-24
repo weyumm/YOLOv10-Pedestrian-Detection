@@ -18,9 +18,14 @@
 <img src="https://github.com/weyumm/YOLOv10-Pedestrian-Detection/blob/main/docs_and_imgs/1-Create%20new%20folder.png" width="720" height="420"> 
 </div>
 - 然后，如果你是Win11的系统，可以通过在进入该文件夹后，右键文件夹中空白的地方，然后启动PowerShell。
-  ![Open Powershell](docs_and_imgs/2-Open Powershell.png)
-  并且，Powershell看起来是这样：
-  ![Powershell looks like this](docs_and_imgs/3-Powershell looks like this.png)
+<div align=center>
+<img src="docs_and_imgs/2-Open Powershell.png" width="720" height="420"> 
+</div>
+  
+并且，Powershell看起来是这样：
+<div align=center>
+<img src="docs_and_imgs/3-Powershell looks like this.png" width="720" height="420"> 
+</div>
 - 当然，如果你是Win11及以下的系统，也可以选择进入该文件夹后，点击上方显示路径的框格，然后输入cmd，打开命令行。Powershell与cmd的命令略有不同，如果你遇到了一些报错，询问AI是一个很好的选择。
   ![Open cmd](docs_and_imgs/4-Open cmd.png)
   并且，cmd看起来是这样：
