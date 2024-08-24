@@ -1,10 +1,290 @@
-# YOLOv10-Pedestrian-Detection
+# Research on Real-time Pedestrian Detection Algorithm of YOLOv10 under Complex Lighting and Occlusion Conditions
+The paper has been submitted, and this is the code for the paper. As a junior undergraduate student not majoring in a computer science related field, I have always encountered a lot of difficulties when trying to reproduce the results of some projects or papers. Therefore, when implementing some of the code myself, I would like more novices to be able to see the results quickly and intuitively, instead of being stuck in a painful debug of configuring the environment and so on. The purpose of this document is to allow more newbies to follow the document step by step, until all the projects are completed quickly and the paper reproduced.
+
+## Step1: Preparation
+- Hardware: If you want to simply verify the effect, even a CPU will do; if you want to train your own YOLO target detection model, and apply it in “video game game auto-targeting”, or “video game daily quests auto-scrubbing”, then I suggest you to train your own YOLO target detection model, and apply it in “video game game auto-targeting”, or “video game daily quests auto-scrubbing”. If you want to train your own YOLO target detection model for “auto-targeting enemies in video games”, or “auto-scouring daily quests in video games”, then I suggest you to use GPUs with N graphics cards, or cloud GPUs for deployment.
+- Software: Before deploying YOLOv10 locally, you need to install Python (version greater than or equal to 3.10) and Git, these two are essential, if you have the foundation, you can consider using Anaconda or Miniconda, or even Docker.
+
+## Step2: Deployment Phase (Windows)
+### Step2.1: Open Powershell or cmd
+- First of all, you can create a new folder in D drive (**newbies please make sure your environment variables allow Python to read & run the files in D drive**), and then name this folder as yolo10PD (you can play around with the name for this step).
+
+<div align=center>
+<img src="https://github.com/weyumm/YOLOv10-Pedestrian-Detection/blob/main/docs_and_imgs/1-Create%20new%20folder.png" width="720" height="420"> 
+</div>
+- Then, if you're on Win11, you can launch PowerShell by right-clicking on an empty space in the folder once you're in that folder, and then launching PowerShell. or you can use the win key + x, and then select Terminal Administrator, and utilize the shortcut to, well, summon the terminal.
+<div align=center>
+<img src="docs_and_imgs/2-Open Powershell.png" width="720" height="420"> 
+</div>
+
+And, Powershell looks like this:
+<div align=center>
+<img src="docs_and_imgs/3-Powershell looks like this.png" width="720" height="420"> 
+</div>
+- Of course, if you're on Win11 and below, you can also choose to open the command line by going into the folder, clicking on the box at the top that displays the path, and typing cmd. Powershell has slightly different commands than cmd, so asking AI is a good option if you run into some reported errors.
+<div align=center>
+<img src="docs_and_imgs/4-Open cmd.png" width="720" height="420"> 
+</div>
+And, cmd looks like this:
+<div align=center>
+<img src="docs_and_imgs/5-cmd looks like this.png" width="720" height="420"> 
+</div>
+
+Of course, if you will jump to the directory by cd command, it is also possible.
+### Step2.2: Create and activate the virtual environment
+- Here, you just need to copy and paste the code line by line into the terminal and run it, and then a change similar to the one shown in the picture means your operation is successful!
+- For Windows system, when you use Powershell, please paste the first code first.
+```
+    python -m venv yolovenv
+```
+ Then, to activate it, enter the following code 【again, this is the Powershell activation command, the activation environment in cmd makes a difference】
+```
+    yolovenv/Scripts/activate
+```
+You will see the green virtual environment as shown highlighted in Powershell, meaning the operation was successful.
+<div align=center>
+<img src="docs_and_imgs/6-Activate the environment in Powershell.png" width="720" height="420"> 
+</div>
+- For Windows, when you use Powershell, the operation is similar but slightly different, again first copy the code below
+ ```
+    python -m venv yolovenv
+```
+At this point, you want to activate the virtual environment using the call command by copying the following code
+```
+    call yolovenv\Scripts\activate.bat
+```
+Similarly, if you see something similar to the image below, it means that you created the virtual environment and activated it successfully using cmd.
+<div align=center>
+<img src="docs_and_imgs/7-Activate the environment in cmd.png" width="720" height="420"> 
+</div>
+<div align=center>
+<img src="docs_and_imgs/8-Activate environment successfully in cmd.png" width="720" height="420"> 
+</div>
+Tip: My virtual environment is called “VLyoloPD”, while the virtual environment created after copying and pasting my code box is called “yolovenv”, don't get confused.
+
+### Step2.3: Install third-party libraries
+First of all, let's use Windows system as an example, copy and paste the code of **pip install** line by line.
+- The first piece of code is to install the necessary base libraries.
+```
+    pip install supervision labelme labelme2yolo huggingface_hub google-cloud-audit-log
+```
+- The second code, if your device has NVIDIA graphics card, then you can consider installing pytorch, but it should be noted that, please go to the official website to install the appropriate version of your computer torch. here code is only as an example, if the installation of this step is particularly fast, then it is very likely that there are some problems with this step of the operation, because the torch library is very large, it will take a long time to install it. It will take a long time to install. If you don't have a NVIDIA graphics card, and you just want to see the effect of pedestrian detection, then you don't need to run this code.
+```
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
+- The third piece of code, which is the open source code for installing YOLOv10, is an essential step, but many problems may be encountered.
+```
+    pip install git+https://github.com/THU-MIG/yolov10.git
+```
+If this code fails to execute, consider installing using SSH.
+First, make sure you've generated an SSH key and added the public key to your GitHub account. You can generate the SSH key (if you haven't already) using the following command:
+```
+    ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+Then, add the generated public key (usually the contents of the ~/.ssh/id_rsa.pub file) to your GitHub account (look for video tutorials to follow along).
+Finally, run this code
+```
+    pip install git+ssh://git@github.com/THU-MIG/yolov10.git
+```
+- The fourth piece of code is to run the PYQT interface that I've wrapped up
+```
+    pip install pyside6 -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+### Step2.4: Install third-party libraries (short tutorial)
+If you want to run the code with CPU, just copy the following three lines:
+```
+    pip install supervision labelme labelme2yolo huggingface_hub google-cloud-audit-log
+    pip install git+https://github.com/THU-MIG/yolov10.git
+    pip install pyside6 -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+If you want to run the code on the GPU, just copy the following four lines:
+```
+    pip install supervision labelme labelme2yolo huggingface_hub google-cloud-audit-log
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+    # The second line depends on your device model, download pytorch yourself from the official website
+    pip install git+https://github.com/THU-MIG/yolov10.git
+    pip install pyside6 -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+If you're experiencing difficulty downloading at home, try Gitee.
+```
+    pip install supervision labelme labelme2yolo huggingface_hub google-cloud-audit-log
+    pip install git+https://gitee.com/weyumm/yolov10
+    pip install pyside6 -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+If you are using Linux, the operation is similar to Windows, the code is shown below.
+```
+  python -m venv yolovenv
+  source yolovenv/bin/activate
+  pip install supervision labelme labelme2yolo huggingface_hub google-cloud-audit-log
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+  pip install git+https://github.com/THU-MIG/yolov10.git
+  pip install pyside6 -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+After the above process, we have the virtual environment ready.
+Please remember to **activate the environment** every time you are ready to do any work with YOLOv10!
+In Windows, you need to cd to the yolo10PD folder (created by Step2.1) and then activate the virtual environment using the following:
+
+Powershell for Windows:
+ ```
+    yolovenv/Scripts/activate
+ ```
+cmd in Windows：
+ ```
+    call yolovenv\Scripts\activate.bat
+ ```
+Linux：
+ ```
+    source yolovenv/bin/activate
+ ```
+## Step3: Downloading the dataset, model & testing video (release) in progress
+## Step3.1: Models
+The models are divided into two sets, model_base (here is the pre-training model for YOLOv10, totaling 6, as well as a benchmark model for YOLOv8).
+
+The other set is model_PD (here is the pre-training model for pedestrian detection, also 6, pre-trained by me in combination with the visual big model).
+
+For details, you can check the Release section.
+
+### Step3.2: Dataset
+The original dataset is from Caltech pedestrian detection dataset, which mainly includes
+
+Training set + test set: seq format data;
+Pedestrian labeling data:vbb(video bounding box) format data, this format data is mainly the pedestrian bounding box in dataset 1. Since we need mainly image format data for training, we need to convert the data in .seq .vbb format to image.
+
+[Visit the Caltech website](https://www.vision.caltech.edu/Image_Datasets/CaltechPedestrians/)
+
+[Google Drive for this dataset]([https://github.com](https://drive.google.com/drive/folders/1CzNwN9QUXvJLYQzzkk-EVDLB0B6bAwJv))
+Here is the dataset download script
+ ```
+    #!/bin/bash
+
+# # Get files from Google Drive
+annolist=(https://drive.google.com/file/d/1EsAL5Q9FfOQls28qYmr2sO6rha1d4YVz/view?usp=sharing)
+for dir in ${annolist[@]};do
+    echo ${dir}
+    echo ${dir:32:33}
+    URL="https://drive.google.com/u/0/uc?export=download&id=${dir:32:33}"
+    wget --load-cookies /tmp/cookies.txt "https://drive.google.com/u/0/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate $URL -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=${dir:32:33}" -O anno.zip && rm -rf /tmp/cookies.txt
+    unzip anno.zip
+done
+rm -rf anno.zip
+
+# USA set00-set10
+setlist=(https://drive.google.com/file/d/1tPeaQr1cVmSABNCJQsd8OekOZIjpJivj/view?usp=sharing
+https://drive.google.com/file/d/1apo5VxoZA5m-Ou4GoGR_voUgLN0KKc4g/view?usp=sharing
+https://drive.google.com/file/d/1yvfjtQV6EnKez6TShMZQq_nkGyY9XA4q/view?usp=sharing
+https://drive.google.com/file/d/1jvF71hw4ztorvz0FWurtyCBs0Dy_Fh0A/view?usp=sharing
+https://drive.google.com/file/d/11Q7uZcfjHLdwpLKwDQmr5gT8LoGF82xY/view?usp=sharing
+https://drive.google.com/file/d/1Q0pnxM5cnO8MJJdqzMGIEryZaEKk_Un_/view?usp=sharing
+https://drive.google.com/file/d/1ft6clVXKdaxFGeihpth_jdBQxOIirSk7/view?usp=sharing
+https://drive.google.com/file/d/1-E_B3iAPQKTvkZ8XyuLcE2Lytog3AofW/view?usp=sharing
+https://drive.google.com/file/d/1oXCaTPOV0UYuxJJrxVtY9_7byhOLTT8G/view?usp=sharing
+https://drive.google.com/file/d/1f0mpL2C2aRoF8bVex8sqWaD8O3f9ZgfR/view?usp=sharing
+https://drive.google.com/file/d/18TvsJ5TKQYZRlj7AmcIvilVapqAss97X/view?usp=sharing
+)
+
+for setdir in ${setlist[@]};do
+    echo ${setdir}
+    echo ${setdir:32:33}
+    URL="https://drive.google.com/u/0/uc?export=download&id=${setdir:32:33}"
+    wget --load-cookies /tmp/cookies.txt "https://drive.google.com/u/0/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate $URL -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=${setdir:32:33}" -O set.tar && rm -rf /tmp/cookies.txt
+    tar -xvf set.tar
+done
+rm -rf set.tar
+ ```
+seq turn into jpg
+```
+#!/usr/bin/env python
+# encoding: utf-8
+# Deal with .seq format for video sequence
+# The .seq file is combined with images,
+# so I split the file into several images with the image prefix
+# "\xFF\xD8\xFF\xE0\x00\x10\x4A\x46\x49\x46".
+
+import os.path
+import fnmatch
+import shutil
+
+
+def open_save(file, savepath):
+    """
+    read .seq file, and save the images into the savepath
+
+    :param file: .seq文件路径
+    :param savepath: 保存的图像路径
+    :return:
+    """
+
+    # 读入一个seq文件，然后拆分成image存入savepath当中
+    f = open(file, 'rb+')
+    # 将seq文件的内容转化成str类型
+    string = f.read().decode('latin-1')
+
+    # splitstring是图片的前缀，可以理解成seq是以splitstring为分隔的多个jpg合成的文件
+    splitstring = "\xFF\xD8\xFF\xE0\x00\x10\x4A\x46\x49\x46"
+
+    # split函数做一个测试,因此返回结果的第一个是在seq文件中是空，因此后面省略掉第一个
+    """
+    >>> a = ".12121.3223.4343"
+    >>> a.split('.')
+    ['', '12121', '3223', '4343']
+    """
+    # split .seq file into segment with the image prefix
+    strlist = string.split(splitstring)
+    f.close()
+    count = 0
+    # delete the image folder path if it exists
+    # if os.path.exists(savepath):
+    #     shutil.rmtree(savepath)
+    # create the image folder path
+    # if not os.path.exists(savepath):
+    #     os.makedirs(savepath)
+    # deal with file segment, every segment is an image except the first one
+    for img in strlist:
+        filename = str(count) + '.jpg'
+        filenamewithpath = savepath + '_' + filename #os.path.join(savepath, filename)
+        # abandon the first one, which is filled with .seq header
+        if count > 0:
+            i = open(filenamewithpath, 'wb+')
+            i.write(splitstring.encode('latin-1'))
+            i.write(img.encode('latin-1'))
+            i.close()
+        count += 1
+
+
+if __name__ == "__main__":
+    rootdir = "/workspace/dataset/zfjuan/data/CaltechPedestrian/"
+    saveroot = "/workspace/dataset/zfjuan/data/CaltechPedestrian/caltech_voc/JPEGImages"
+
+    # walk in the rootdir, take down the .seq filename and filepath
+    for parent, dirnames, filenames in os.walk(rootdir):
+        for filename in filenames:
+            # check .seq file with suffix
+            # fnmatch 全称是 filename match，主要是用来匹配文件名是否符合规则的
+            if fnmatch.fnmatch(filename, '*.seq'):
+                # take down the filename with path of .seq file
+                thefilename = os.path.join(parent, filename)
+                # create the image folder by combining .seq file path with .seq filename
+                parent_path = parent
+                parent_path = parent_path.replace('\\', '/')
+                thesavepath = saveroot + '/' + parent_path.split('/')[-1] + '_' + filename.split('.')[0]
+                print("Filename=" + thefilename)
+                print("Savepath=" + thesavepath)
+                open_save(thefilename, thesavepath)
+
+
+```
+
+The expanded dataset Campus is photographed by itself, and when you want to use it, please remember to integrate Campus into the Caltech dataset by dividing it into a training set, a test set, and a cross-validation set.
 
 
 
+
+
+ 
+————————————————————————————————————————————————————————————————————————————————
 
 # 复杂光照和遮挡条件下 YOLOv10 的行人实时检测算法研究
-论文已投递，这是论文的代码，作为一名初学者，本说明文档旨在让更多的新手，也能随着文档一步步操作，直至快速完成所有项目与论文复现。
+论文已投递，这是论文的代码，作为一名非计算机科学相关专业的低年级本科生，我在尝试复现一些项目或者论文结果时总遇到许多困难。因此，当自己实现了一些代码后，我希望更多新手能快速而直观地看到成效，而不是被困于配置环境等等的痛苦debug中。本说明文档旨在让更多的新手，也能随着文档一步步操作，直至快速完成所有项目与论文复现。
 
 ## Step1：准备阶段
 - 硬件：如果想要简单验证效果，哪怕是CPU也可以；如果你希望训练自己的YOLO目标检测模型，应用在“电子游戏的游戏自动锁定敌方”，亦或者“电子游戏的每日任务自动刷副本”，那么我建议你使用带有N显卡的GPU，亦或者使用云GPU进行部署。
@@ -97,7 +377,7 @@
     pip install pyside6 -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-### Step2.3：安装第三方库(简明教程)
+### Step2.4：安装第三方库(简明教程)
 如果你想用CPU跑代码，只需要复制以下三行：
 ```
     pip install supervision labelme labelme2yolo huggingface_hub google-cloud-audit-log
