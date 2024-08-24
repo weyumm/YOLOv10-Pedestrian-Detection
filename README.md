@@ -1,4 +1,4 @@
-# Research on Real-time Pedestrian Detection Algorithm of YOLOv10 under Complex Lighting and Occlusion Conditions
+![image](https://github.com/user-attachments/assets/49900609-3e5c-4d5d-9373-1784aa4d6793)# Research on Real-time Pedestrian Detection Algorithm of YOLOv10 under Complex Lighting and Occlusion Conditions
 The paper has been submitted, and this is the code for the paper. As a junior undergraduate student not majoring in a computer science related field, I have always encountered a lot of difficulties when trying to reproduce the results of some projects or papers. Therefore, when implementing some of the code myself, I would like more novices to be able to see the results quickly and intuitively, instead of being stuck in a painful debug of configuring the environment and so on. The purpose of this document is to allow more newbies to follow the document step by step, until all the projects are completed quickly and the paper reproduced.
 
 ## Step1: Preparation
@@ -276,9 +276,21 @@ if __name__ == "__main__":
 
 The expanded dataset Campus is photographed by itself, and when you want to use it, please remember to integrate Campus into the Caltech dataset by dividing it into a training set, a test set, and a cross-validation set.
 
+### Step3.3: Test Videos
+The test videos are again four in number and are already in Release. Compress them with datavideo.7z.
 
+**This part, the model, dataset, and test videos you're going to download are all organized in Release
 
+If, however, you're not too good with Github, you can get these in my web share.
 
+## Step4: Start reproducing my work
+
+```
+    git clone https://github.com/weyumm/YOLOv10-Pedestrian-Detection
+```
+First clone my code locally, then open verify_my_work and start the initial reproduction.
+
+There are four files in this folder, I call them “Dock Four”, I believe they can bring you infinite happiness. Each py file has its own skill, each py file has its own trick, its fighting spirit and patience are even more amazing, and the careful bilingual comments will bring you surprises!
 
  
 ————————————————————————————————————————————————————————————————————————————————
@@ -564,4 +576,38 @@ if __name__ == "__main__":
 扩充数据集Campus由自己拍摄，当你想要使用时，请记得把Campus融入Caltech数据集，划分为训练集、测试集以及交叉验证集。
 
 ### Step3.3：测试视频
+测试视频同样有四个，并且已经在Release中了。用datavideo.7z压缩。
 
+**这一部分，你要下载的模型、数据集、测试视频都整理在Release中了**
+
+如果，你不太会使用Github，可以在我的网盘分享中拿到这些内容。
+
+
+## Step4：开始复现我的工作
+```
+    git clone https://github.com/weyumm/YOLOv10-Pedestrian-Detection
+```
+先把我的代码clone到本地，然后打开verify_my_work，开始初步的复现工作。
+
+这个文件夹有四个文件，我把他们叫做“码头四”，相信它们能给你带来无限快乐。每段py文件都身怀绝技，每段py文件都有独门绝招，斗志和耐性更是技惊四座，精心的双语注释更给你带来意外惊喜呀！！
+
+- 第一，Camera Screenshot.py是用来截图的，你只要激活环境，然后cd到verify_my_work目录，然后在终端里运行Python文件即可。
+如图所示，当激活环境和cd指令完成后，你需要在终端里输入：
+```
+    python Camera Screenshot.py
+```
+此代码的每一行，我都撰写了中英文注释，但在此再次重复一下操作：
+1. 按下 'Esc' 键退出程序
+2. 按下 's' 键保存当前帧
+- 第二，Video Frame-cutting.py可以把存储在本地的一段视频进行抽帧后输出，但请务必记得打开Python文件，自己修改下路径。
+```
+    python Video Frame-cutting.py
+```
+- 第三，yolov10-detect.py可以打开本地电脑的摄像头，然后实时检测摄像头前的画面。
+```
+    python yolov10-detect.py
+```
+- 第四，yolov10-detect-video.py可以调用已经被训练好的权重文件，然后检测这段视频的画面。
+```
+    python yolov10-detect-video.py
+```
