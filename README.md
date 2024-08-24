@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/49900609-3e5c-4d5d-9373-1784aa4d6793)# Research on Real-time Pedestrian Detection Algorithm of YOLOv10 under Complex Lighting and Occlusion Conditions
+# Research on Real-time Pedestrian Detection Algorithm of YOLOv10 under Complex Lighting and Occlusion Conditions
 The paper has been submitted, and this is the code for the paper. As a junior undergraduate student not majoring in a computer science related field, I have always encountered a lot of difficulties when trying to reproduce the results of some projects or papers. Therefore, when implementing some of the code myself, I would like more novices to be able to see the results quickly and intuitively, instead of being stuck in a painful debug of configuring the environment and so on. The purpose of this document is to allow more newbies to follow the document step by step, until all the projects are completed quickly and the paper reproduced.
 
 ## Step1: Preparation
