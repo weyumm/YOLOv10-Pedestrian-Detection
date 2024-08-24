@@ -13,7 +13,7 @@
 ## Step2：部署阶段（Windows）
 ### Step2.1：打开Powershell或cmd
 - 首先，你可以在D盘新建一个文件夹（**新手请确保你的环境变量能让Python读取与运行D盘的文件**），然后将这个文件夹命名为yolo10PD（这一步的名字可以自行发挥）。
-  ![Create new folder]([docs_and_imgs/1-Create new folder.png](https://github.com/weyumm/YOLOv10-Pedestrian-Detection/blob/main/docs_and_imgs/1-Create%20new%20folder.png)
+  ![Create new folder]([docs_and_imgs/1-Create new folder.png](https://github.com/weyumm/YOLOv10-Pedestrian-Detection/blob/main/docs_and_imgs/1-Create%20new%20folder.png))
 - 然后，如果你是Win11的系统，可以通过在进入该文件夹后，右键文件夹中空白的地方，然后启动PowerShell。
   ![Open Powershell](docs_and_imgs/2-Open Powershell.png)
   并且，Powershell看起来是这样：
