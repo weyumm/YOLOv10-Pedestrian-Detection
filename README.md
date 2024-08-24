@@ -17,7 +17,7 @@
 <div align=center>
 <img src="https://github.com/weyumm/YOLOv10-Pedestrian-Detection/blob/main/docs_and_imgs/1-Create%20new%20folder.png" width="720" height="420"> 
 </div>
-- 然后，如果你是Win11的系统，可以通过在进入该文件夹后，右键文件夹中空白的地方，然后启动PowerShell。
+- 然后，如果你是Win11的系统，可以通过在进入该文件夹后，右键文件夹中空白的地方，然后启动PowerShell。或者可以使用win键+x，然后选择终端管理员，利用快捷键，召唤终端。
 <div align=center>
 <img src="docs_and_imgs/2-Open Powershell.png" width="720" height="420"> 
 </div>
@@ -34,7 +34,8 @@
 <div align=center>
 <img src="docs_and_imgs/5-cmd looks like this.png" width="720" height="420"> 
 </div>
-  
+
+当然，如果你会通过cd指令来跳转目录，也是可以的。
 ### Step2.2：创建并激活虚拟环境
 - 在这里，你只要逐行复制粘贴代码到终端里运行，然后出现类似如图所示的变化，意味着你的操作成功了
 - 对于Windows系统，当你使用Powershell时，请先粘贴第一段代码
@@ -111,3 +112,34 @@
     pip install git+https://github.com/THU-MIG/yolov10.git
     pip install pyside6 -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
+如果你在国内遇到难以下载的情况，可以试试Gitee。
+```
+    pip install supervision labelme labelme2yolo huggingface_hub google-cloud-audit-log
+    pip install git+https://gitee.com/weyumm/yolov10
+    pip install pyside6 -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+如果你使用Linux系统，操作与Windows系统是差不多的，代码如下所示。
+```
+  python -m venv yolovenv
+  source yolovenv/bin/activate
+  pip install supervision labelme labelme2yolo huggingface_hub google-cloud-audit-log
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+  pip install git+https://github.com/THU-MIG/yolov10.git
+  pip install pyside6 -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+经过上述流程后，我们已经把虚拟环境准备完毕了。
+在你每次准备使用YOLOv10进行任何工作时，请记得**激活环境**
+在Windows中，你需要在cd到yolo10PD文件夹（Step2.1建立的），然后使用以下方式激活虚拟环境：
+
+Windows的Powershell：
+ ```
+    yolovenv/Scripts/activate
+ ```
+Windows的cmd：
+ ```
+    call yolovenv\Scripts\activate.bat
+ ```
+Linux：
+ ```
+    source yolovenv/bin/activate
+ ```
