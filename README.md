@@ -592,6 +592,9 @@ if __name__ == "__main__":
 这个文件夹有四个文件，我把他们叫做“码头四”，相信它们能给你带来无限快乐。每段py文件都身怀绝技，每段py文件都有独门绝招，斗志和耐性更是技惊四座，精心的双语注释更给你带来意外惊喜呀！！
 
 - 第一，Camera Screenshot.py是用来截图的，你只要激活环境，然后cd到verify_my_work目录，然后在终端里运行Python文件即可。
+<div align=center>
+<img src="verify_my_work/9-Take screenshots.png" width="720" height="420"> 
+</div>
 如图所示，当激活环境和cd指令完成后，你需要在终端里输入：
 ```
     python Camera Screenshot.py
@@ -600,6 +603,9 @@ if __name__ == "__main__":
 1. 按下 'Esc' 键退出程序
 2. 按下 's' 键保存当前帧
 - 第二，Video Frame-cutting.py可以把存储在本地的一段视频进行抽帧后输出，但请务必记得打开Python文件，自己修改下路径。
+<div align=center>
+<img src="verify_my_work/10-Modify the video path.png" width="720" height="420"> 
+</div>
 ```
     python Video Frame-cutting.py
 ```
@@ -607,7 +613,18 @@ if __name__ == "__main__":
 ```
     python yolov10-detect.py
 ```
-- 第四，yolov10-detect-video.py可以调用已经被训练好的权重文件，然后检测这段视频的画面。
+- 第四，yolov10-detect-video.py可以调用已经被训练好的权重文件，然后检测这段视频的画面，也要记得修改下路径。
+<div align=center>
+<img src="verify_my_work/11-Modify the model path.png" width="720" height="420"> 
+</div>
 ```
     python yolov10-detect-video.py
 ```
+- 最后，把你下载的模型与测试视频，像下图一样放在verify_my_work文件夹下，能省去很多不必要的调整环境变量的麻烦。
+<div align=center>
+<img src="verify_my_work/12-initial state.png" width="720" height="420"> 
+</div>
+<div align=center>
+<img src="verify_my_work/13-Assembly complete.png" width="720" height="420"> 
+</div>
+那么，请试着在终端里，使用python yolov10-detect-video.py等指令进行行人检测吧，如果上述操作，你都是正确的，那么你将会看到执行成功的弹窗，这里以测试视频 test003.mp4为例：
