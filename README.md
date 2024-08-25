@@ -1,6 +1,19 @@
 # Research on Real-time Pedestrian Detection Algorithm of YOLOv10 under Complex Lighting and Occlusion Conditions
 The paper has been submitted, and this is the code for the paper. As a junior undergraduate student not majoring in a computer science related field, I have always encountered a lot of difficulties when trying to reproduce the results of some projects or papers. Therefore, when implementing some of the code myself, I would like more novices to be able to see the results quickly and intuitively, instead of being stuck in a painful debug of configuring the environment and so on. The purpose of this document is to allow more newbies to follow the document step by step, until all the projects are completed quickly and the paper reproduced.
 
+<div align=center>
+<img src="docs_and_imgs/19-YOLOv10 architecture diagram.png" width="720" height="420"> 
+</div>
+The picture above shows the idea of testing.
+<div align=center>
+<img src="docs_and_imgs/20-YOLOv10 Network Architecture.png" width="720" height="420"> 
+</div>
+The diagram above shows the network structure.
+<div align=center>
+<img src="docs_and_imgs/18-plot.png" width="720" height="420"> 
+</div>
+The chart above shows the evaluation indicators.
+
 ## Step1: Preparation
 - Hardware: If you want to simply verify the effect, even a CPU will do; if you want to train your own YOLO target detection model, and apply it in “video game game auto-targeting”, or “video game daily quests auto-scrubbing”, then I suggest you to train your own YOLO target detection model, and apply it in “video game game auto-targeting”, or “video game daily quests auto-scrubbing”. If you want to train your own YOLO target detection model for “auto-targeting enemies in video games”, or “auto-scouring daily quests in video games”, then I suggest you to use GPUs with N graphics cards, or cloud GPUs for deployment.
 - Software: Before deploying YOLOv10 locally, you need to install Python (version greater than or equal to 3.10) and Git, these two are essential, if you have the foundation, you can consider using Anaconda or Miniconda, or even Docker.
@@ -385,7 +398,18 @@ Above, that is the complete process, I plan to record the operation of the video
 
 # 复杂光照和遮挡条件下 YOLOv10 的行人实时检测算法研究
 论文已投递，这是论文的代码，作为一名非计算机科学相关专业的低年级本科生，我在尝试复现一些项目或者论文结果时总遇到许多困难。因此，当自己实现了一些代码后，我希望更多新手能快速而直观地看到成效，而不是被困于配置环境等等的痛苦debug中。本说明文档旨在让更多的新手，也能随着文档一步步操作，直至快速完成所有项目与论文复现。
-
+<div align=center>
+<img src="docs_and_imgs/19-YOLOv10 architecture diagram.png" width="720" height="420"> 
+</div>
+上图为检测思路
+<div align=center>
+<img src="docs_and_imgs/20-YOLOv10 Network Architecture.png" width="720" height="420"> 
+</div>
+上图为网络结构
+<div align=center>
+<img src="docs_and_imgs/18-plot.png" width="720" height="420"> 
+</div>
+上图为评价指标
 ## Step1：准备阶段
 - 硬件：如果想要简单验证效果，哪怕是CPU也可以；如果你希望训练自己的YOLO目标检测模型，应用在“电子游戏的游戏自动锁定敌方”，亦或者“电子游戏的每日任务自动刷副本”，那么我建议你使用带有N显卡的GPU，亦或者使用云GPU进行部署。
 - 软件：本地部署YOLOv10前，你需要先安装好Python（版本大于等于3.10）和Git，这两个是必备的，如果你有基础，可以考虑使用Anaconda或者Miniconda，甚至Docker等。
