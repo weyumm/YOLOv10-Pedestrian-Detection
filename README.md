@@ -293,7 +293,95 @@ First clone my code locally, then open verify_my_work and start the initial repr
 There are four files in this folder, I call them “Dock Four”, I believe they can bring you infinite happiness. Each py file has its own skill, each py file has its own trick, its fighting spirit and patience are even more amazing, and the careful bilingual comments will bring you surprises!
 
  
-———————————————————————————————————————————————————————————————————————
+- First, Camera Screenshot.py is for taking screenshots, you just have to activate the environment and cd to the verify_my_work directory and then run the Python file in the terminal.
+<div align=center>
+<img src="verify_my_work/9-Take screenshots.png" width="720" height="420"> 
+</div>
+As you can see in the picture, when the activation of the environment and the cd command are done, you need to type in the terminal:
+```
+    python Camera Screenshot.py
+```
+I have written comments in English and Chinese for each line of this code, but I will repeat the procedure again here:
+1. Press 'Esc' to exit the program
+2. Press 's' to save the current frame.
+- Second, Video Frame-cutting.py can output a locally stored video after frame-cutting, but please remember to open the Python file and change the path yourself.
+<div align=center>
+<img src="verify_my_work/10-Modify the video path.png" width="720" height="420"> 
+</div>
+```
+    python Video Frame-cutting.py
+```
+- Third, yolov10-detect.py can open the local computer's webcam and then detect the screen in front of the webcam in real time.
+```
+    python yolov10-detect.py
+```
+- Fourth, yolov10-detect-video.py can call the weight file that has been trained and then detect the frame of this video, also remember to modify the path.
+<div align=center>
+<img src="verify_my_work/11-Modify the model path.png" width="720" height="420"> 
+</div>
+```
+    python yolov10-detect-video.py
+```
+- Finally, putting the model you downloaded with the test video in the verify_my_work folder like in the image below will save you a lot of unnecessary tweaking of environment variables.
+<div align=center>
+<img src="verify_my_work/12-initial state.png" width="720" height="420"> 
+</div>
+<div align=center>
+<img src="verify_my_work/13-Assembly complete.png" width="720" height="420"> 
+</div>
+Then, please try to do a pedestrian detection in the terminal, using commands such as python yolov10-detect-video.py, if the above operations, you are correct, then you will see the pop-up window of the successful execution, here is an example of the test video test003.mp4:
+<div align=center>
+<img src="docs_and_imgs/14-Example test chart.png" width="720" height="420"> 
+</div>
+<div align=center>
+<img src="docs_and_imgs/15-stop detection.png" width="720" height="420"> 
+</div>
+Press Ctrl+c to stop detection
+## Step5: Using the wrapper
+First of all, when you clone my project, please cd to the appropriate directory:
+```
+    cd D:\yolo10PD\pyqt
+```
+Then, if you are a Chinese user, run this code in a virtual environment：
+```
+    python base_camera_cn.py
+```
+Please follow the order in the figure, first select the weight file, then initialize the weight file, and then try 【photo inspection and display the results】, 【video inspection and display the results】, 【camera real-time inspection and display the results】 in turn
+<div align=center>
+<img src="docs_and_imgs/16-GUI screen cn.png" width="720" height="420"> 
+</div>
+if you are a English user, run this code in a virtual environment：
+```
+    python base_camera_en.py
+```
+<div align=center>
+<img src="docs_and_imgs/17-GUI screen en.png" width="720" height="420"> 
+</div>
+Please follow the order in the figure, first select the weight file, then initialize the weight file, and then try 【photo inspection and display the results】, 【video inspection and display the results】, 【camera real-time inspection and display the results】 in turn
+
+
+## Step5: Train your own model
+You can use the cloud platform, Roboflow for training, [Roboflow official website](roboflow.com “Click to visit Roboflow”)
+You can also train locally with the labelme plugin, this part has already downloaded the relevant libraries when configuring the environment, you just need to run the following code
+```
+    labelme2yolo --json_dir  D:\yolo10PD\output_images
+```
+However, please note that Roboflow cloud platform can automatically resize the image to 640x640, but the local labelme does not, so please manually resize the image to 640x640 yourself.
+Then, **change the paths in the data.yaml file** in the Campus dataset to the absolute paths where you put your own training set, test set, and validation set.
+Finally, enter the training instructions in the terminal:
+```
+    yolo detect train data=D:/yolo10PD/dataset/Campus/data.yaml model=yolov10n.pt epochs=10 batch=8 imgsz=640 device=0
+```
+The path corresponding to data is exactly the absolute path where the yaml file is located. model can specify the (YOLOn, s, m, b, l, x) model you want to use, and is compatible from YOLOv8 to YOLOv10.
+
+If you have one NVIDIA graphics card, you can write device=0. If you have two, write device=1.
+
+If you only use the CPU, then you can remove device and not write
+```
+    yolo detect train data=D:/yolo10PD/dataset/Campus/data.yaml model=yolov10n.pt epochs=10 batch=8 imgsz=640
+```
+Above, that is the complete process, I plan to record the operation of the video, to assist newcomers to learn better.
+————————————————————————————————————————————————————————————————
 
 # 复杂光照和遮挡条件下 YOLOv10 的行人实时检测算法研究
 论文已投递，这是论文的代码，作为一名非计算机科学相关专业的低年级本科生，我在尝试复现一些项目或者论文结果时总遇到许多困难。因此，当自己实现了一些代码后，我希望更多新手能快速而直观地看到成效，而不是被困于配置环境等等的痛苦debug中。本说明文档旨在让更多的新手，也能随着文档一步步操作，直至快速完成所有项目与论文复现。
@@ -656,3 +744,25 @@ if __name__ == "__main__":
 <img src="docs_and_imgs/17-GUI screen en.png" width="720" height="420"> 
 </div>
 请按照图中的顺序，先选择权重文件，然后初始化权重文件，然后依次尝试【照片检验并显示结果】、【视频检验并显示结果】、【摄像头实时检验并显示结果】
+
+## Step5：训练自己的模型
+可以使用云端平台，Roboflow进行训练，[Roboflow官网](roboflow.com "点击访问 Roboflow")
+也可以在本地用labelme插件来训练，这部分已经在配置环境时下载了相关的库，你只需要运行以下代码
+```
+    labelme2yolo --json_dir  D:\yolo10PD\output_images
+```
+但要注意的是，Roboflow云端平台可以自动把图像尺寸调整为640x640，但本地的labelme并不可以，因此请自己手动将图片调整为640x640的尺寸。
+然后，修改Campus数据集中的data.yaml文件中的路径，改为你自己放训练集、测试集、验证集的绝对路径。
+最后，在终端中输入训练指令：
+```
+    yolo detect train data=D:/yolo10PD/dataset/Campus/data.yaml model=yolov10n.pt epochs=10 batch=8 imgsz=640 device=0
+```
+data所对应的路径，正是yaml文件所在的绝对路径，model可以指定你要使用的（YOLOn、s、m、b、l、x）模型，从YOLOv8到YOLOv10都兼容。
+
+如果你有一块NVIDIA显卡，可以写device=0，有两块，就写device=1。
+
+如果你只用CPU，那么可以去掉device不写
+```
+    yolo detect train data=D:/yolo10PD/dataset/Campus/data.yaml model=yolov10n.pt epochs=10 batch=8 imgsz=640
+```
+以上，即是完整流程了，我计划再录制操作视频，辅助新手们更好地学习。
