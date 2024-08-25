@@ -293,7 +293,7 @@ First clone my code locally, then open verify_my_work and start the initial repr
 There are four files in this folder, I call them “Dock Four”, I believe they can bring you infinite happiness. Each py file has its own skill, each py file has its own trick, its fighting spirit and patience are even more amazing, and the careful bilingual comments will bring you surprises!
 
  
-————————————————————————————————————————————————————————————————————————————————
+———————————————————————————————————————————————————————————————————————
 
 # 复杂光照和遮挡条件下 YOLOv10 的行人实时检测算法研究
 论文已投递，这是论文的代码，作为一名非计算机科学相关专业的低年级本科生，我在尝试复现一些项目或者论文结果时总遇到许多困难。因此，当自己实现了一些代码后，我希望更多新手能快速而直观地看到成效，而不是被困于配置环境等等的痛苦debug中。本说明文档旨在让更多的新手，也能随着文档一步步操作，直至快速完成所有项目与论文复现。
@@ -628,3 +628,31 @@ if __name__ == "__main__":
 <img src="verify_my_work/13-Assembly complete.png" width="720" height="420"> 
 </div>
 那么，请试着在终端里，使用python yolov10-detect-video.py等指令进行行人检测吧，如果上述操作，你都是正确的，那么你将会看到执行成功的弹窗，这里以测试视频 test003.mp4为例：
+<div align=center>
+<img src="docs_and_imgs/14-Example test chart.png" width="720" height="420"> 
+</div>
+<div align=center>
+<img src="docs_and_imgs/15-stop detection.png" width="720" height="420"> 
+</div>
+按Ctrl+c停止检测
+## Step5：使用封装程序
+首先，当你clone我的项目后，请cd到相应目录：
+```
+    cd D:\yolo10PD\pyqt
+```
+然后，如果你是中文版用户，请在虚拟环境中运行
+```
+    python base_camera_cn.py
+```
+请按照图中的顺序，先选择权重文件，然后初始化权重文件，然后依次尝试【照片检验并显示结果】、【视频检验并显示结果】、【摄像头实时检验并显示结果】
+<div align=center>
+<img src="docs_and_imgs/16-GUI screen cn.png" width="720" height="420"> 
+</div>
+如果你是英文版用户，请在虚拟环境中运行
+```
+    python base_camera_en.py
+```
+<div align=center>
+<img src="docs_and_imgs/17-GUI screen en.png" width="720" height="420"> 
+</div>
+请按照图中的顺序，先选择权重文件，然后初始化权重文件，然后依次尝试【照片检验并显示结果】、【视频检验并显示结果】、【摄像头实时检验并显示结果】
